@@ -1,0 +1,1 @@
+GAME USING <map> and <area> IN HTML !
