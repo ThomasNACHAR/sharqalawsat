@@ -5,35 +5,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        @import url(https://fonts.googleapis.com/css?family=Roboto+Condensed);
+       /* #map {
+            max-width: 50%;
+            max-height: 50%;
+        } */
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .output {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        .output button {
+            width: 170px;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            text-align: center;
+            color: #000;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-left: 30px;
+            margin-bottom: 30px;
+            cursor: pointer;
+            display: inline-block;
+            }
+        
+            .output button {
+                background-color: transparent;
+                border: 3px solid #00d7c3;
+                border-radius: 50px;
+                -webkit-transition: all .15s ease-in-out;
+                transition: all .15s ease-in-out;
+                color: #00d7c3;
+            }
+
+            .output button:hover {
+                box-shadow: 0 0 10px 0 #00d7c3 inset, 0 0 20px 2px #00d7c3;
+                border: 3px solid #00d7c3;
+            }
+
+            .output span {
+                width: 170px;
+                padding-top: 30px;
+                padding-bottom: 30px;
+                text-align: center;
+                color: #000;
+                text-transform: uppercase;
+                font-weight: 600;
+                margin-left: 30px;
+                margin-bottom: 30px;
+                cursor: pointer;
+                display: inline-block;
+                color: #fff;
+                border: 3px solid #c266d3;
+                background-image: -webkit-linear-gradient(30deg, #c266d3 50%, transparent 50%);
+                background-image: linear-gradient(30deg, #c266d3 50%, transparent 50%);
+                background-size: 500px;
+                background-repeat: no-repeat;
+                background-position: 0%;
+                -webkit-transition: background 300ms ease-in-out;
+                transition: background 300ms ease-in-out;
+            }
+
+            .output span:hover {
+                background-position: 100%;
+                color: #c266d3;
+            }
     </style>
 </head>
 <body>
-    <img id="map" onclick="clickCountry('Faux')" src="mapBled.png" usemap="#image_map">
-<map class="memap" name="image_map">
-  <area id="liban" onclick="clickCountry('Liban')" title="Mystère !" coords="202,371 209,374 221,364 221,357 229,356 238,348 233,338 223,336 " shape="polygon">
-  <area id="jerusalem" onclick="clickCountry('Cisjordanie/Jérusalem')" title="Mystère !" coords="208,389 202,387 198,392 197,405 201,406 193,415 205,417 " shape="polygon">
-  <area id="israel" onclick="clickCountry('Israël')" title="Mystère !" coords="185,460 178,420 188,406 199,379 204,373 211,373 210,390 202,385 196,404 192,416 203,416 188,461 " shape="polygon">
-  <area id="jordanie" onclick="clickCountry('Jordanie')" title="Mystère !" coords="187,465 208,471 217,467 223,459 242,457 245,448 254,444 236,416 281,409 287,403 281,398 279,376 236,397 217,385 211,385 " shape="polygon">
-  <area id="syrie" onclick="clickCountry('Syrie')" title="Mystère !" coords="226,303 231,307 237,304 237,299 244,298 245,284 251,289 258,290 278,285 286,292 307,292 329,285 357,283 361,289 347,300 338,301 334,309 338,319 329,351 237,396 221,390 216,383 218,370 222,365 231,357 237,349 235,337 226,337 222,313 " shape="polygon">
-  <area id="egypte" onclick="clickCountry('Égypte')" title="Mystère !" coords="-1,376 36,390 68,409 90,402 113,398 129,403 140,413 157,414 177,416 186,463 171,490 172,496 165,503 149,481 148,470 139,458 138,444 132,452 137,460 137,473 152,496 156,529 187,602 181,604 185,630 195,637 208,655 2,624 1,376 " shape="polygon">
-  <area id="yemen" onclick="clickCountry('Yémen')" title="Mystère !" coords="335,806 345,799 345,784 352,781 359,783 397,783 431,789 439,798 450,796 467,768 493,755 560,746 586,804 566,816 567,830 516,852 490,860 478,872 463,872 431,885 404,886 385,901 347,904 342,886 339,865 328,833 " shape="polygon">
-  <area id="oman" onclick="clickCountry('Oman')" title="Mystère !" coords="631,649 643,670 630,718 560,747 587,805 609,796 631,796 642,785 644,771 668,768 674,750 700,743 706,700 711,706 729,674 742,648 708,621 672,616 655,592 649,596 644,592 642,612 647,616 637,620 630,648 " shape="polygon">
-  <area id="emiratsarabesunis" onclick="clickCountry('Émirats arabes unis')" title="Mystère !" coords="547,615 547,621 571,646 630,654 635,622 648,617 642,613 643,594 649,597 657,592 652,577 649,578 648,567 639,578 617,602 603,618 571,615 553,621 546,615 " shape="polygon">
-  <area id="qatar" onclick="clickCountry('Qatar')" title="Mystère !" coords="541,603 535,606 530,603 529,586 537,565 544,567 548,575 547,589 550,596 542,605 " shape="polygon">
-  <area id="bahrein" onclick="clickCountry('Bahreïn')" title="Mystère !" coords="520,564 521,573 524,577 526,566 " shape="polygon">
-  <area id="koweit" onclick="clickCountry('Koweït')" title="Mystère !" coords="475,506 459,506 456,494 435,492 447,477 450,467 468,469 473,472 476,480 473,481 467,479 461,486 465,489 469,486 476,506 " shape="polygon">
-  <area id="irak" onclick="clickCountry('Irak')" title="Mystère !" coords="283,406 308,412 347,439 396,489 437,493 452,466 469,469 477,471 476,465 470,459 468,445 463,446 462,437 466,424 456,408 450,409 437,395 428,395 428,390 433,389 426,377 423,378 416,369 421,360 421,353 430,343 434,337 431,329 436,324 427,322 419,318 412,305 408,298 410,289 405,288 398,292 396,286 391,282 387,286 367,280 357,286 348,298 337,300 335,311 335,328 332,345 329,353 322,353 278,374 " shape="polygon">
-  <area id="iran" onclick="clickCountry('Iran')" title="Mystère !" coords="772,575 773,553 785,547 786,541 795,539 803,538 805,524 792,523 791,498 769,494 744,462 762,433 758,422 740,423 740,406 731,380 739,370 728,369 726,354 734,349 731,346 741,318 734,292 719,295 709,285 698,279 698,272 682,269 676,272 657,263 655,256 637,259 636,265 617,263 607,272 607,280 589,285 592,299 580,296 543,304 517,292 514,283 495,281 490,259 483,260 472,248 479,244 472,238 479,235 471,226 444,245 436,247 428,228 418,228 414,224 407,221 402,231 396,231 398,257 404,256 396,267 404,275 407,289 417,310 422,319 436,324 431,327 433,337 422,352 420,359 418,369 424,378 433,388 429,392 437,396 449,408 456,408 466,426 462,438 463,445 469,444 471,457 477,467 481,471 488,469 495,465 502,470 512,466 526,493 531,501 540,520 548,525 572,538 592,552 617,557 631,555 651,546 651,538 666,542 675,572 696,577 717,578 745,579 771,582 " shape="polygon"> 
-  <area id="turquie" onclick="clickCountry('Turquie')" title="Mystère !" coords="54,154 62,146 62,142 72,139 65,128 76,124 86,125 87,128 97,128 100,142 118,153 138,156 158,163 198,144 225,152 228,146 231,149 231,155 237,161 248,160 253,173 259,167 279,180 294,185 311,181 325,187 354,176 374,175 388,189 391,204 390,216 404,215 408,220 403,231 396,231 399,258 397,269 404,273 404,282 407,289 398,292 395,283 390,285 368,283 356,281 349,287 330,285 298,294 278,287 255,289 246,285 241,297 231,306 227,306 227,294 235,284 229,281 219,287 204,281 188,291 161,293 153,278 127,265 119,281 95,277 84,256 71,266 64,258 62,242 62,225 47,215 52,205 58,193 53,184 54,154 162,315 " shape="polygon">
-  <area id="chypre" onclick="clickCountry('Chypre')" title="Mystère !" coords="185,324 177,322 174,317 165,318 159,314 152,315 153,326 166,330 185,326 " shape="polygon">
-  <area id="chypredunord" onclick="clickCountry('Chypre du Nord')" title="Mystère !" coords="199,306 180,311 168,310 164,314 174,315 178,321 186,322 186,317 " shape="polygon">
-  <area id="palestine" onclick="clickCountry('Palestine/Gaza')" title="Mystère !" coords="177,417 188,410 184,405 174,411 177,417 " shape="polygon">
-  <area id="arabiesaoudite" onclick="clickCountry('Arabie saoudite')" title="Mystère !" coords="187,463 176,497 187,498 213,553 208,563 218,570 222,572 225,584 221,584 228,599 242,606 260,648 255,660 257,678 270,703 277,703 301,747 312,769 328,779 327,788 334,807 346,800 346,783 356,779 363,785 433,789 438,798 450,795 453,784 468,769 492,755 558,746 631,718 642,667 632,650 631,654 568,647 548,619 548,616 541,614 542,605 535,607 531,604 524,594 522,583 516,578 509,568 515,568 516,561 510,555 515,554 503,543 496,533 483,531 486,522 477,507 459,508 456,496 438,493 393,488 342,437 309,413 285,405 270,411 237,417 254,445 244,450 242,458 226,458 211,472 186,463 " shape="polygon">
-</map>
-<button onclick="startGame()">START</button>
-<span id="country"></span>
-<span id="message">  </span>
-<span id="count">  </span>
+    <div class="container">
+        <img id="map" onclick="clickCountry('Faux')" src="mapBled.png" usemap="#image_map">
+        <map class="memap" name="image_map">
+          <area id="liban" onclick="clickCountry('Liban')" title="Mystère !" coords="202,371 209,374 221,364 221,357 229,356 238,348 233,338 223,336 " shape="polygon">
+          <area id="jerusalem" onclick="clickCountry('Cisjordanie/Jérusalem')" title="Mystère !" coords="208,389 202,387 198,392 197,405 201,406 193,415 205,417 " shape="polygon">
+          <area id="israel" onclick="clickCountry('Israël')" title="Mystère !" coords="185,460 178,420 188,406 199,379 204,373 211,373 210,390 202,385 196,404 192,416 203,416 188,461 " shape="polygon">
+          <area id="jordanie" onclick="clickCountry('Jordanie')" title="Mystère !" coords="187,465 208,471 217,467 223,459 242,457 245,448 254,444 236,416 281,409 287,403 281,398 279,376 236,397 217,385 211,385 " shape="polygon">
+          <area id="syrie" onclick="clickCountry('Syrie')" title="Mystère !" coords="226,303 231,307 237,304 237,299 244,298 245,284 251,289 258,290 278,285 286,292 307,292 329,285 357,283 361,289 347,300 338,301 334,309 338,319 329,351 237,396 221,390 216,383 218,370 222,365 231,357 237,349 235,337 226,337 222,313 " shape="polygon">
+          <area id="egypte" onclick="clickCountry('Égypte')" title="Mystère !" coords="-1,376 36,390 68,409 90,402 113,398 129,403 140,413 157,414 177,416 186,463 171,490 172,496 165,503 149,481 148,470 139,458 138,444 132,452 137,460 137,473 152,496 156,529 187,602 181,604 185,630 195,637 208,655 2,624 1,376 " shape="polygon">
+          <area id="yemen" onclick="clickCountry('Yémen')" title="Mystère !" coords="335,806 345,799 345,784 352,781 359,783 397,783 431,789 439,798 450,796 467,768 493,755 560,746 586,804 566,816 567,830 516,852 490,860 478,872 463,872 431,885 404,886 385,901 347,904 342,886 339,865 328,833 " shape="polygon">
+          <area id="oman" onclick="clickCountry('Oman')" title="Mystère !" coords="631,649 643,670 630,718 560,747 587,805 609,796 631,796 642,785 644,771 668,768 674,750 700,743 706,700 711,706 729,674 742,648 708,621 672,616 655,592 649,596 644,592 642,612 647,616 637,620 630,648 " shape="polygon">
+          <area id="emiratsarabesunis" onclick="clickCountry('Émirats arabes unis')" title="Mystère !" coords="547,615 547,621 571,646 630,654 635,622 648,617 642,613 643,594 649,597 657,592 652,577 649,578 648,567 639,578 617,602 603,618 571,615 553,621 546,615 " shape="polygon">
+          <area id="qatar" onclick="clickCountry('Qatar')" title="Mystère !" coords="541,603 535,606 530,603 529,586 537,565 544,567 548,575 547,589 550,596 542,605 " shape="polygon">
+          <area id="bahrein" onclick="clickCountry('Bahreïn')" title="Mystère !" coords="520,564 521,573 524,577 526,566 " shape="polygon">
+          <area id="koweit" onclick="clickCountry('Koweït')" title="Mystère !" coords="475,506 459,506 456,494 435,492 447,477 450,467 468,469 473,472 476,480 473,481 467,479 461,486 465,489 469,486 476,506 " shape="polygon">
+          <area id="irak" onclick="clickCountry('Irak')" title="Mystère !" coords="283,406 308,412 347,439 396,489 437,493 452,466 469,469 477,471 476,465 470,459 468,445 463,446 462,437 466,424 456,408 450,409 437,395 428,395 428,390 433,389 426,377 423,378 416,369 421,360 421,353 430,343 434,337 431,329 436,324 427,322 419,318 412,305 408,298 410,289 405,288 398,292 396,286 391,282 387,286 367,280 357,286 348,298 337,300 335,311 335,328 332,345 329,353 322,353 278,374 " shape="polygon">
+          <area id="iran" onclick="clickCountry('Iran')" title="Mystère !" coords="772,575 773,553 785,547 786,541 795,539 803,538 805,524 792,523 791,498 769,494 744,462 762,433 758,422 740,423 740,406 731,380 739,370 728,369 726,354 734,349 731,346 741,318 734,292 719,295 709,285 698,279 698,272 682,269 676,272 657,263 655,256 637,259 636,265 617,263 607,272 607,280 589,285 592,299 580,296 543,304 517,292 514,283 495,281 490,259 483,260 472,248 479,244 472,238 479,235 471,226 444,245 436,247 428,228 418,228 414,224 407,221 402,231 396,231 398,257 404,256 396,267 404,275 407,289 417,310 422,319 436,324 431,327 433,337 422,352 420,359 418,369 424,378 433,388 429,392 437,396 449,408 456,408 466,426 462,438 463,445 469,444 471,457 477,467 481,471 488,469 495,465 502,470 512,466 526,493 531,501 540,520 548,525 572,538 592,552 617,557 631,555 651,546 651,538 666,542 675,572 696,577 717,578 745,579 771,582 " shape="polygon"> 
+          <area id="turquie" onclick="clickCountry('Turquie')" title="Mystère !" coords="54,154 62,146 62,142 72,139 65,128 76,124 86,125 87,128 97,128 100,142 118,153 138,156 158,163 198,144 225,152 228,146 231,149 231,155 237,161 248,160 253,173 259,167 279,180 294,185 311,181 325,187 354,176 374,175 388,189 391,204 390,216 404,215 408,220 403,231 396,231 399,258 397,269 404,273 404,282 407,289 398,292 395,283 390,285 368,283 356,281 349,287 330,285 298,294 278,287 255,289 246,285 241,297 231,306 227,306 227,294 235,284 229,281 219,287 204,281 188,291 161,293 153,278 127,265 119,281 95,277 84,256 71,266 64,258 62,242 62,225 47,215 52,205 58,193 53,184 54,154 162,315 " shape="polygon">
+          <area id="chypre" onclick="clickCountry('Chypre')" title="Mystère !" coords="185,324 177,322 174,317 165,318 159,314 152,315 153,326 166,330 185,326 " shape="polygon">
+          <area id="chypredunord" onclick="clickCountry('Chypre du Nord')" title="Mystère !" coords="199,306 180,311 168,310 164,314 174,315 178,321 186,322 186,317 " shape="polygon">
+          <area id="palestine" onclick="clickCountry('Palestine/Gaza')" title="Mystère !" coords="177,417 188,410 184,405 174,411 177,417 " shape="polygon">
+          <area id="arabiesaoudite" onclick="clickCountry('Arabie saoudite')" title="Mystère !" coords="187,463 176,497 187,498 213,553 208,563 218,570 222,572 225,584 221,584 228,599 242,606 260,648 255,660 257,678 270,703 277,703 301,747 312,769 328,779 327,788 334,807 346,800 346,783 356,779 363,785 433,789 438,798 450,795 453,784 468,769 492,755 558,746 631,718 642,667 632,650 631,654 568,647 548,619 548,616 541,614 542,605 535,607 531,604 524,594 522,583 516,578 509,568 515,568 516,561 510,555 515,554 503,543 496,533 483,531 486,522 477,507 459,508 456,496 438,493 393,488 342,437 309,413 285,405 270,411 237,417 254,445 244,450 242,458 226,458 211,472 186,463 " shape="polygon">
+        </map>
+        <div class="output">
+            <button onclick="startGame()">START</button>
+            <span id="country"></span>
+            <span id="message">  </span>
+            <span id="count">  </span>
+            <span id="bool">    </span>
+        </div>
+        <div></div>
+        <div></div>
+    </div>
+    
+
 <script>
     const jeu = {
         start: false,
@@ -64,30 +145,49 @@
         country: document.getElementById('country'),
         message: document.getElementById('message'),
         count: document.getElementById('count'),
+        bool: document.getElementById("bool"),
         turn: -1
     }
 
     function startGame() {
+        jeu.liste = ['Arabie saoudite', 'Bahreïn', 'Chypre', 'Égypte', 'Émirats arabes unis', 'Irak', 'Iran', 'Israël', 'Jordanie', 'Koweït', 'Liban', 'Oman', 'Palestine/Gaza', 'Qatar', 'Syrie', 'Turquie', 'Yémen', 'Cisjordanie/Jérusalem', 'Chypre du Nord'];
         jeu.start = true;
         jeu.score = 0;
         jeu.clics = 0;
         jeu.turn = Math.floor(Math.random() * 19);
         jeu.country.innerHTML = `${jeu.liste[jeu.turn]}`;
+        count.innerHTML = `Nombre de clics : ${jeu.clics}`;
+        message.innerHTML = `Votre score : ${jeu.score}/19`; 
+        jeu.bool.innerHTML = "A vos clics !";
+        jeu.bool.style.background = "#c266d3";
     }
 
     function clickCountry(choice) {
         if (jeu.start) {
+            jeu.bool.style.background = "red";
+            jeu.bool.innerHTML = "Faux !";
+            if (choice=='Faux') {
+                jeu.clics++;
+                jeu.bool.style.background = "red";
+                jeu.bool.innerHTML = "Pas au Moyen-Orient !";
+            }
             jeu.clics++;
             count.innerHTML = `Nombre de clics : ${jeu.clics}`;
             if (choice==jeu.liste[jeu.turn]) {
+                jeu.bool.style.background = "green";
+                jeu.bool.innerHTML = "Vrai !";
                 jeu.score++;
-                message.innerHTML = `Votre score : ${jeu.score}/19`;                
-                jeu.liste.splice(jeu.turn, 1);
-                console.log(jeu.turn);
-                console.log(jeu.liste);                 
-                jeu.turn = Math.floor(Math.random() * jeu.liste.length);
-                jeu.country.innerHTML = `${jeu.liste[jeu.turn]}`;
-            }
+                message.innerHTML = `Votre score : ${jeu.score}/19`; 
+                if (jeu.score==19) {
+                    jeu.country.innerHTML = "Vous avez réussi !";
+                } else {              
+                    jeu.liste.splice(jeu.turn, 1);
+                    console.log(jeu.turn);
+                    console.log(jeu.liste);                 
+                    jeu.turn = Math.floor(Math.random() * jeu.liste.length);
+                    jeu.country.innerHTML = `${jeu.liste[jeu.turn]}`;
+                }
+            } 
         }
     }
 </script>
